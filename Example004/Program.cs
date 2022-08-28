@@ -1,19 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Введите число для проверки: ");
-int n = int.Parse(Console.ReadLine() ?? "0");
-bool k = false; 
-for(int i=0; i < Digitsnumber(n); i++)
-{    
-    if((Digitindex(n,i+1) == 4 || Digitindex(n,i+1) == 7)
-        &&(Digitsnumber(n) == 4 || Digitsnumber(n) == 7))
-        k = true;
-}
-if(k == true)
+﻿// Петя любит счастливые числа. Всем известно, что счастливыми являются положительные
+// целые числа, в десятичной записи которых содержатся только счастливые цифры 4 и 7.
+// Например, числа 47, 744, 4 являются счастливыми, а 5, 17, 467 — не являются.
+// К сожалению, не все числа счастливые. Петя называет число почти счастливым, если 
+// количество счастливых цифр в нем — счастливое число. Ему интересно, является ли 
+// число n почти счастливым.
+
+Console.WriteLine("Введите число");
+string n = Console.ReadLine();
+int c = 0;
+for(int i = 0; i <n.Length; i++)
 {
-    Console.WriteLine("Да, введенное Вами число является счастливым.");
+    if (n[i] =='7' || n[i] =='4') c++;
 }
-else
+if (c == 7 || c==4) 
 {
-    Console.WriteLine("Нет, введенное Вами число не является счастливым.");
+    Console.WriteLine("YES");
+}    
+else 
+{
+    Console.WriteLine("NO");
 }
-;
+
+
